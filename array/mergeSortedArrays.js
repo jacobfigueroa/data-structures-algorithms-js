@@ -31,11 +31,11 @@ const mergeSortedArrays = (array1, array2) => {
 }
 
 let a = [1, 7, 9, 12, 45]
-let b = [5 ,8, 21, 27]
+let b = [5, 8, 21, 27]
 
 console.log(mergeSortedArrays(a, b))
 
 a = [23, 121, 312, 423, 445, 488, 500]
-b = [1 ,10, 30, 400, 900]
+b = [1, 10, 30, 400, 900]
 
 console.log(mergeSortedArrays(a, b))

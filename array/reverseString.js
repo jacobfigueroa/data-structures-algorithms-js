@@ -1,4 +1,4 @@
-const reverseString = str => {
+const reverseString = (str) => {
   const characterArray = str.split("")
   const length = characterArray.length
   for (let i = 0; i < length / 2; i++) {

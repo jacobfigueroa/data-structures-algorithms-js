@@ -42,10 +42,10 @@ class Graph {
 
   showConnections() {
     const allNodes = Object.keys(this.adjacentList)
-    allNodes.forEach(node => {
+    allNodes.forEach((node) => {
       let nodeConnections = Object.keys(this.adjacentList[node])
       let connections = ""
-      nodeConnections.forEach(vertex => {
+      nodeConnections.forEach((vertex) => {
         connections += vertex + " "
       })
       console.log(`${node} --> ${connections}`)

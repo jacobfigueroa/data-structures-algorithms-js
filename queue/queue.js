@@ -53,7 +53,7 @@ class Queue {
   list() {
     console.log("<First>")
     let current = this.first
-    while(current) {
+    while (current) {
       console.log(current.data)
       current = current.next
     }

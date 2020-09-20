@@ -1,4 +1,4 @@
-const firstRecurringChar = array => {
+const firstRecurringChar = (array) => {
   const chars = {}
   for (let i = 0; i < array.length; i++) {
     const char = array[i]

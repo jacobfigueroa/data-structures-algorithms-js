@@ -1,4 +1,4 @@
-const iterative = n => {
+const iterative = (n) => {
   let factorial = n
   for (let i = n - 1; i >= 1; i--) {
     factorial *= i
@@ -6,7 +6,7 @@ const iterative = n => {
   return factorial
 }
 
-const recursive = n => {
+const recursive = (n) => {
   if (n <= 1) {
     return 1
   }
@@ -15,7 +15,6 @@ const recursive = n => {
 
 console.log(iterative(5))
 console.log(recursive(5))
-
 
 console.log(iterative(10))
 console.log(recursive(10))

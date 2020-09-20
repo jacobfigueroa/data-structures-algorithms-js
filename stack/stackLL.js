@@ -52,7 +52,7 @@ class Stack {
   list() {
     console.log("<Top>")
     let current = this.top
-    while(current) {
+    while (current) {
       console.log(current.data)
       current = current.prev
     }

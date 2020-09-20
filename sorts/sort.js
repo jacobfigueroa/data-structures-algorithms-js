@@ -1,19 +1,19 @@
-const { PerformanceObserver, performance } = require('perf_hooks');
+const { PerformanceObserver, performance } = require("perf_hooks")
 
-const bubbleSort = array => {
+const bubbleSort = (array) => {
   for (let i = 0; i < array.length; i++) {
     for (let j = 0; j < array.length; j++) {
-      if (array[j] > array[j+1]) {
+      if (array[j] > array[j + 1]) {
         const temp = array[j]
-        array[j] = array[j+1]
-        array[j+1] = temp
+        array[j] = array[j + 1]
+        array[j + 1] = temp
       }
     }
   }
   return array
 }
 
-const selectionSort = array => {
+const selectionSort = (array) => {
   for (let i = 0; i < array.length; i++) {
     let min = i
     for (let j = i + 1; j < array.length; j++) {
@@ -28,13 +28,13 @@ const selectionSort = array => {
   return array
 }
 
-const insertionSort = array => {
+const insertionSort = (array) => {
   for (let i = 0; i < array.length; i++) {
     if (array[i] < array[0]) {
       array.unshift(array.splice(i, 1)[0])
     } else {
       for (let j = 1; j < array.length; j++) {
-        if (array[i] > array[j-1] && array[i] < array[j]) {
+        if (array[i] > array[j - 1] && array[i] < array[j]) {
           array.splice(j, 0, array.splice(i, 1)[0])
         }
       }
@@ -43,15 +43,14 @@ const insertionSort = array => {
   return array
 }
 
-
-const insertionSort2 = array => {
+const insertionSort2 = (array) => {
   let i = 1
   while (i < array.length) {
     let j = i
-    while (j > 0 && array[j-1] > array[j]) {
+    while (j > 0 && array[j - 1] > array[j]) {
       const temp = array[j]
-      array[j] = array[j-1]
-      array[j-1] = temp
+      array[j] = array[j - 1]
+      array[j - 1] = temp
       j--
     }
     i++
@@ -60,18 +59,18 @@ const insertionSort2 = array => {
 }
 
 // same as insertionSort2 but with a for loop
-const insertionSort3 = array => {
+const insertionSort3 = (array) => {
   for (let i = 1; i < array.length; i++) {
-    for (let j = i; j > 0 && array[j-1] > array[j]; j--) {
+    for (let j = i; j > 0 && array[j - 1] > array[j]; j--) {
       const temp = array[j]
-      array[j] = array[j-1]
-      array[j-1] = temp
+      array[j] = array[j - 1]
+      array[j - 1] = temp
     }
   }
   return array
 }
 
-const mergeSort = array => {
+const mergeSort = (array) => {
   if (array.length === 1 || !array.length) {
     return array
   }
@@ -80,10 +79,7 @@ const mergeSort = array => {
   const left = array.slice(0, middleIndex)
   const right = array.slice(middleIndex, array.length)
 
-  return _merge(
-    mergeSort(left),
-    mergeSort(right)
-  )
+  return _merge(mergeSort(left), mergeSort(right))
 }
 
 // Merges two sorted arrays
@@ -120,7 +116,248 @@ const _merge = (array1, array2) => {
 }
 
 // const myArray = [21, 32, 4, 1, 12, 45, 55, 7, 13, 31, 99, 9, 56, 26, 91, 81, 37, 42, 44, 12, 13, 2, 3, 18]
-const myArray = [21, 32, 4, 1, 12, 45, 55, 7, 13, 31, 99, 9, 56, 26, 91, 81, 37, 42, 44, 12, 13, 2, 3, 18, 21, 32, 4, 1, 12, 45, 55, 7, 13, 31, 99, 9, 56, 26, 91, 81, 37, 42, 44, 12, 13, 2, 3, 18, 21, 32, 4, 1, 12, 45, 55, 7, 13, 31, 99, 9, 56, 26, 91, 81, 37, 42, 44, 12, 13, 2, 3, 18, 21, 32, 4, 1, 12, 45, 55, 7, 13, 31, 99, 9, 56, 26, 91, 81, 37, 42, 44, 12, 13, 2, 3, 18, 21, 32, 4, 1, 12, 45, 55, 7, 13, 31, 99, 9, 56, 26, 91, 81, 37, 42, 44, 12, 13, 2, 3, 18, 21, 32, 4, 1, 12, 45, 55, 7, 13, 31, 99, 9, 56, 26, 91, 81, 37, 42, 44, 12, 13, 2, 3, 18, 21, 32, 4, 1, 12, 45, 55, 7, 13, 31, 99, 9, 56, 26, 91, 81, 37, 42, 44, 12, 13, 2, 3, 18, 21, 32, 4, 1, 12, 45, 55, 7, 13, 31, 99, 9, 56, 26, 91, 81, 37, 42, 44, 12, 13, 2, 3, 18, 21, 32, 4, 1, 12, 45, 55, 7, 13, 31, 99, 9, 56, 26, 91, 81, 37, 42, 44, 12, 13, 2, 3, 18, 21, 32, 4, 1, 12, 45, 55, 7, 13, 31, 99, 9, 56, 26, 91, 81, 37, 42, 44, 12, 13, 2, 3, 18]
+const myArray = [
+  21,
+  32,
+  4,
+  1,
+  12,
+  45,
+  55,
+  7,
+  13,
+  31,
+  99,
+  9,
+  56,
+  26,
+  91,
+  81,
+  37,
+  42,
+  44,
+  12,
+  13,
+  2,
+  3,
+  18,
+  21,
+  32,
+  4,
+  1,
+  12,
+  45,
+  55,
+  7,
+  13,
+  31,
+  99,
+  9,
+  56,
+  26,
+  91,
+  81,
+  37,
+  42,
+  44,
+  12,
+  13,
+  2,
+  3,
+  18,
+  21,
+  32,
+  4,
+  1,
+  12,
+  45,
+  55,
+  7,
+  13,
+  31,
+  99,
+  9,
+  56,
+  26,
+  91,
+  81,
+  37,
+  42,
+  44,
+  12,
+  13,
+  2,
+  3,
+  18,
+  21,
+  32,
+  4,
+  1,
+  12,
+  45,
+  55,
+  7,
+  13,
+  31,
+  99,
+  9,
+  56,
+  26,
+  91,
+  81,
+  37,
+  42,
+  44,
+  12,
+  13,
+  2,
+  3,
+  18,
+  21,
+  32,
+  4,
+  1,
+  12,
+  45,
+  55,
+  7,
+  13,
+  31,
+  99,
+  9,
+  56,
+  26,
+  91,
+  81,
+  37,
+  42,
+  44,
+  12,
+  13,
+  2,
+  3,
+  18,
+  21,
+  32,
+  4,
+  1,
+  12,
+  45,
+  55,
+  7,
+  13,
+  31,
+  99,
+  9,
+  56,
+  26,
+  91,
+  81,
+  37,
+  42,
+  44,
+  12,
+  13,
+  2,
+  3,
+  18,
+  21,
+  32,
+  4,
+  1,
+  12,
+  45,
+  55,
+  7,
+  13,
+  31,
+  99,
+  9,
+  56,
+  26,
+  91,
+  81,
+  37,
+  42,
+  44,
+  12,
+  13,
+  2,
+  3,
+  18,
+  21,
+  32,
+  4,
+  1,
+  12,
+  45,
+  55,
+  7,
+  13,
+  31,
+  99,
+  9,
+  56,
+  26,
+  91,
+  81,
+  37,
+  42,
+  44,
+  12,
+  13,
+  2,
+  3,
+  18,
+  21,
+  32,
+  4,
+  1,
+  12,
+  45,
+  55,
+  7,
+  13,
+  31,
+  99,
+  9,
+  56,
+  26,
+  91,
+  81,
+  37,
+  42,
+  44,
+  12,
+  13,
+  2,
+  3,
+  18,
+  21,
+  32,
+  4,
+  1,
+  12,
+  45,
+  55,
+  7,
+  13,
+  31,
+  99,
+  9,
+  56,
+  26,
+  91,
+  81,
+  37,
+  42,
+  44,
+  12,
+  13,
+  2,
+  3,
+  18,
+]
 
 console.log(performance.now())
 console.log(bubbleSort([...myArray]))

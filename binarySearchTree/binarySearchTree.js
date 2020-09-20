@@ -16,7 +16,7 @@ class BinarySearchTree {
   insert(value) {
     this.root = this._insertHelper(this.root, value)
   }
-  
+
   _insertHelper(current, value) {
     if (!current) {
       return new Node(value)
@@ -52,7 +52,6 @@ class BinarySearchTree {
   }
 
   remove(value) {
-
     // this.root = this.remove(this.root, value)
 
     const node = this.lookup(value)
@@ -69,7 +68,10 @@ class BinarySearchTree {
         node = node.left
       } else {
         // two children
-        const { parent: minParent, node: minNode } = this.findMinAndParent(node, node.right)
+        const { parent: minParent, node: minNode } = this.findMinAndParent(
+          node,
+          node.right
+        )
         node.value = minNode.value
         minParent.left = null
       }
@@ -90,7 +92,7 @@ class BinarySearchTree {
     const list = []
     queue.enqueue(currentNode)
 
-    while(queue.count > 0) {
+    while (queue.count > 0) {
       currentNode = queue.dequeue().data
       list.push(currentNode.value)
 

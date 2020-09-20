@@ -57,7 +57,7 @@ class LinkedList {
     if (index > this.count) {
       throw new Error("Index cannot exceed the count")
     }
-    
+
     const node = new Node(x)
     if (!this.head) {
       this._insertInitialNode(node)
@@ -90,7 +90,7 @@ class LinkedList {
     if (index >= this.count) {
       throw new Error("Index cannot exceed the count")
     }
-    
+
     if (!this.head) {
       throw new Error("List is empty")
     } else if (index === 0 && this.count === 1) {
@@ -116,7 +116,6 @@ class LinkedList {
         nextNode = current.next
 
         if (i === index) {
-
           prevNode.next = nextNode
           nextNode.prev = prevNode
           break
@@ -135,7 +134,6 @@ class LinkedList {
     let current = this.head
     let nextNode = null
     while (current) {
-      
       nextNode = current.next
 
       prevNode = current

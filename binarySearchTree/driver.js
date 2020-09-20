@@ -8,7 +8,6 @@ const BinarySearchTree = require("./binarySearchTree")
 //  \    /  \    /
 //  14  33  40  80
 
-
 const myTree = new BinarySearchTree()
 myTree.insert(50)
 myTree.insert(72)
@@ -39,13 +38,12 @@ console.log(51, myTree.lookup(51))
 console.log(80, myTree.lookup(80))
 console.log(3, myTree.lookup(3))
 
-const traverse = node => {
+const traverse = (node) => {
   const tree = { value: node.value }
   tree.left = node.left === null ? null : traverse(node.left)
   tree.right = node.right === null ? null : traverse(node.right)
   return tree
 }
-
 
 // console.log(JSON.stringify(traverse(myTree.root)))
 
